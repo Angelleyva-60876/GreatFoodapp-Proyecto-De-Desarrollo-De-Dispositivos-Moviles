@@ -47,14 +47,14 @@
             android:id="@+id/button_welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_pizza"
             android:layout_marginStart="45dp"
             android:layout_marginTop="400dp"
             android:layout_marginBottom="8dp"
-            android:textColor="@android:color/black"
-            app:backgroundTint="#B9E36C"
+            android:drawableLeft="@drawable/ic_pizza"
             android:text="INGRESAR"
-            android:textSize="40sp" />
+            android:textColor="@android:color/black"
+            android:textSize="40sp"
+            app:backgroundTint="#B9E36C" />
 
 
     </RelativeLayout>
