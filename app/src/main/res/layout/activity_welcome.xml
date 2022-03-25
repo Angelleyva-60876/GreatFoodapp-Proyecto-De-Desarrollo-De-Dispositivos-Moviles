@@ -52,11 +52,15 @@
             android:layout_marginStart="45dp"
             android:layout_marginTop="400dp"
             android:layout_marginBottom="8dp"
-            android:drawableLeft="@drawable/ic_pizza"
             android:text="INGRESAR"
             android:textColor="@android:color/black"
+            android:background="@drawable/boton_redondo"
+            app:backgroundTint="#B9E36C"
+            android:radius="30px"
+            android:drawableLeft="@drawable/ic_pizza"
+
             android:textSize="40sp"
-            app:backgroundTint="#B9E36C" />
+             />
 
 
     </RelativeLayout>
