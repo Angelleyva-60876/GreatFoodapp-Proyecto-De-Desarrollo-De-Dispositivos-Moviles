@@ -14,48 +14,46 @@
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
         android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        >
 
 
         <ImageView
+            android:contentDescription="@null"
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="4dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/fondo_app"
+            app:srcCompat="@drawable/fond_app"
             tools:layout_editor_absoluteX="0dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="153dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="110dp"
             android:orientation="vertical">
 
 
+            <Button
+                android:id="@+id/button_welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="250dp"
 
+                android:background="@drawable/boton_redondo"
+                android:drawableStart="@drawable/ic_boton"
+                android:onClick="Ingresar"
+                android:radius="30dp"
+                android:text="@string/ingresar"
+                android:textColor="@android:color/black"
+
+                android:textSize="36sp"
+                app:backgroundTint="#FFF59D" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/button_welcome"
-            android:layout_width="335dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="300dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/boton_redondo"
-            android:drawableLeft="@drawable/ic_boton"
-            android:radius="30px"
-            android:gravity="center_horizontal"
-            android:text="INGRESAR"
-
-            android:textColor="@android:color/black"
-            android:textSize="40sp"
-            app:backgroundTint="#FFF59D" />
-
 
     </RelativeLayout>
 
