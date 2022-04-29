@@ -18,13 +18,13 @@ import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.project.foodrecipes.R
-import com.project.foodrecipes.model.ModelDetailRecipe
-import com.project.foodrecipes.model.ModelFilter
-import com.project.foodrecipes.networking.Api
+import com.app.greatfood.model.ModelDetailRecipe
+import com.app.greatfood.model.ModelFilter
+import com.app.greatfood.networking.Api
 import kotlinx.android.synthetic.main.activity_detail_recipe.*
 import org.json.JSONException
 import org.json.JSONObject
+import com.app.greatfood.R
 
 @Suppress("DEPRECATION")
 class DetailRecipeActivity : AppCompatActivity() {
@@ -36,7 +36,7 @@ class DetailRecipeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_recipe)
+        setContentView(com.app.greatfood.R.layout.activity_detail_recipe)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -77,7 +77,7 @@ class DetailRecipeActivity : AppCompatActivity() {
             //Get image source
             Glide.with(this)
                     .load(modelFilter!!.strMealThumb)
-                    .placeholder(R.drawable.ic_food_placeholder)
+                    .placeholder(com.app.greatfood.R.drawable.ic_food_placeholder)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(imgThumb)
 
@@ -155,7 +155,7 @@ class DetailRecipeActivity : AppCompatActivity() {
         }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home) {
+        if (item.itemId == com.app.greatfood.R.id.home) {
             finish()
             return true
         }

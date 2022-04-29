@@ -7,15 +7,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.project.foodrecipes.R;
-import com.project.foodrecipes.model.ModelFilter;
-
+import com.app.greatfood.R;
+import com.app.greatfood.model.ModelFilter;
 import java.util.List;
 
 /**

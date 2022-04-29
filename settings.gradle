@@ -1,6 +1,6 @@
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
+//pluginManagement {
+    //repositories {
+        /*gradlePluginPortal()
         google()
         mavenCentral()
     }
@@ -11,6 +11,6 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
-}
+}*/
 rootProject.name = "GreatFood"
 include ':app'

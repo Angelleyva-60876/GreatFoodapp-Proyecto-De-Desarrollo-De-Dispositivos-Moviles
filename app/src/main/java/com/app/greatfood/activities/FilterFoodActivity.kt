@@ -18,11 +18,11 @@ import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.project.foodrecipes.R
-import com.project.foodrecipes.adapter.FilterFoodAdapter
-import com.project.foodrecipes.model.ModelFilter
-import com.project.foodrecipes.model.ModelMain
-import com.project.foodrecipes.networking.Api
+import com.app.greatfood.R
+import com.app.greatfood.adapter.FilterFoodAdapter
+import com.app.greatfood.model.ModelFilter
+import com.app.greatfood.model.ModelMain
+import com.app.greatfood.networking.Api
 import kotlinx.android.synthetic.main.activity_filter_food.*
 import org.json.JSONException
 import org.json.JSONObject
