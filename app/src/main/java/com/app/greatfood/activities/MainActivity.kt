@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity(), MainAdapter.onSelectData {
 
                     override fun onError(anError: ANError) {
                         progressDialog!!.dismiss()
-                        Toast.makeText(this@MainActivity, "No internet connection!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MainActivity, "No hay conexion a internet!", Toast.LENGTH_SHORT).show()
                     }
                 })
         }
@@ -115,8 +115,8 @@ class MainActivity : AppCompatActivity(), MainAdapter.onSelectData {
 
     private fun openGithub() {
         imgOpenGithub!!.setOnClickListener {
-            val uri = Uri.parse("https://github.com/achmadqomarudin")
-            startActivity(Intent.createChooser(Intent(Intent.ACTION_VIEW, uri), "Open with"))
+            val uri = Uri.parse("https://github.com/Angelleyva-60876/GreatFoodapp-Proyecto-De-Desarrollo-De-Dispositivos-Moviles")
+            startActivity(Intent.createChooser(Intent(Intent.ACTION_VIEW, uri), "Abrir con"))
         }
     }
 
@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity(), MainAdapter.onSelectData {
     }
 
     private fun setSearchView(query: String) {
-        Toast.makeText(this@MainActivity, "Feature under development", Toast.LENGTH_LONG).show()
+        Toast.makeText(this@MainActivity, "Sin terminar", Toast.LENGTH_LONG).show()
 //        if (list.contains(query)) {
 //            adapter.filter.filter(query)
 //        } else {
@@ -147,7 +147,7 @@ class MainActivity : AppCompatActivity(), MainAdapter.onSelectData {
     }
 
     companion object {
-        //Set Transparent Status bar
+        //Varra transparente
         fun setWindowFlag(activity: Activity, bits: Int, on: Boolean) {
             val win = activity.window
             val winParams = win.attributes

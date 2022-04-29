@@ -77,7 +77,7 @@ class DetailRecipeActivity : AppCompatActivity() {
             //Get image source
             Glide.with(this)
                     .load(modelFilter!!.strMealThumb)
-                    .placeholder(com.app.greatfood.R.drawable.ic_food_placeholder)
+                    .placeholder(R.drawable.ic_food_placeholder)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(imgThumb)
 
@@ -155,7 +155,7 @@ class DetailRecipeActivity : AppCompatActivity() {
         }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == com.app.greatfood.R.id.home) {
+        if (item.itemId == R.id.home) {
             finish()
             return true
         }

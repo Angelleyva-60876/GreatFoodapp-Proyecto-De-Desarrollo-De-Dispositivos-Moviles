@@ -58,8 +58,8 @@ class FilterFoodActivity : AppCompatActivity(), FilterFoodAdapter.onSelectData {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         progressDialog = ProgressDialog(this)
-        progressDialog!!.setTitle("Please Wait")
-        progressDialog!!.setMessage("Displaying data ...")
+        progressDialog!!.setTitle("Espero un momento")
+        progressDialog!!.setMessage("Cargando datos ...")
         progressDialog!!.setCancelable(false)
         progressDialog!!.setCanceledOnTouchOutside(false)
 
@@ -71,25 +71,24 @@ class FilterFoodActivity : AppCompatActivity(), FilterFoodAdapter.onSelectData {
             strCategory = modelMain!!.strCategory
             strCategoryDescription = modelMain!!.strCategoryDescription
 
-            //Set text
-            tvTitle.setText("Food List $strCategory")
+            //Mostrar texto
+            tvTitle.setText("lista de platillos $strCategory")
             tvDescCategories.setText(strCategoryDescription)
 
-            //Get image background
+            //Imagen de fondo
             Glide.with(this)
                     .load(modelMain!!.strCategoryThumb)
                     .placeholder(R.drawable.ic_food_placeholder)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(imgCategoriesBg)
 
-            //Get image source
+            //
             Glide.with(this)
                     .load(modelMain!!.strCategoryThumb)
                     .placeholder(R.drawable.ic_food_placeholder)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(imgCategories)
 
-            //Methods get data
             meal
         }
     }
