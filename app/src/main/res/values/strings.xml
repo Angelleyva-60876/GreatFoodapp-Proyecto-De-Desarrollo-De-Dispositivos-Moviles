@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GreatFood</string>
+    <string name="quotes"><font color='black'>¡Haz tu propia comida,\nquédate en </font><font color='#85710A'>Casa!</font></string>
+    <string name="ingresar">Ingresar</string>
+</resources>
