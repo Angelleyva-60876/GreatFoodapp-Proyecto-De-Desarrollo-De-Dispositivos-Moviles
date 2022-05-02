@@ -1,16 +1,5 @@
 <resources>
     <string name="app_name">GreatFood</string>
-    <string name="action_settings">Ajustes</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Siguiente</string>
-    <string name="previous">Anterior</string>
+    <string name="quotes"><font color='black'>¡Haz tu propia comida,\nquédate en </font><font color='#85710A'>Casa!</font></string>
     <string name="ingresar">Ingresar</string>
-    <string name="quotes"><font color='black'>Haz tu propia comida,\Quédate en </font><font color='#f18d46'>CASA!</font></string>
-
-
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

@@ -72,7 +72,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#d900bcd4" />
+                        android:background="#fdd835" />
 
                     <ImageView
                         android:id="@+id/imgCategories"
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cvDetailCategories"
                 android:layout_marginStart="12dp"
-                android:text="Lista de comida"
+                android:text="lista de Platillos"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -113,10 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/tvList"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_margin="10dp" />
 
         </RelativeLayout>
 

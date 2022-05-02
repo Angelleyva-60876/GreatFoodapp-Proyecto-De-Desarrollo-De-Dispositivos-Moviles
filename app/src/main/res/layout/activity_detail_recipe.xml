@@ -65,27 +65,7 @@
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#ffffe1e1"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp"
-                    app:cardUseCompatPadding="true">
 
-                    <TextView
-                        android:id="@+id/tvYoutube"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_play"
-                        android:drawablePadding="10dp"
-                        android:gravity="center_vertical"
-                        android:padding="10dp"
-                        android:text="Watch On Youtube"
-                        android:textColor="#ffec2d2d"
-                        android:textSize="12sp" />
-
-                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
@@ -103,7 +83,7 @@
                         android:drawablePadding="15dp"
                         android:gravity="center_vertical"
                         android:padding="10dp"
-                        android:text="Share Recipe"
+                        android:text="Compartir"
                         android:textColor="#A66B08"
                         android:textSize="12sp" />
 
@@ -125,7 +105,7 @@
                         android:drawablePadding="10dp"
                         android:gravity="center_vertical"
                         android:padding="10dp"
-                        android:text="Source"
+                        android:text="Ver en Web"
                         android:textColor="#ff2a7e2f"
                         android:textSize="12sp" />
 
@@ -172,7 +152,7 @@
                             android:layout_height="wrap_content"
                             android:padding="10dp"
                             android:src="@drawable/ic_favorite"
-                            android:tint="@android:color/white" />
+                            app:tint="@android:color/white" />
 
                     </androidx.cardview.widget.CardView>
 
