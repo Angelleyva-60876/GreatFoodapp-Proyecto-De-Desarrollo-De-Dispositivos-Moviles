@@ -27,14 +27,18 @@ import kotlinx.android.synthetic.main.toolbar_main.*
 import org.json.JSONException
 import org.json.JSONObject
 import java.util.*
+import android.widget.ArrayAdapter
+import android.widget.ListView
 
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity(), MainAdapter.onSelectData {
 
     var mainAdapter: MainAdapter? = null
+    var mainActivity: MainActivity? = null
     var progressDialog: ProgressDialog? = null
     var modelMain: MutableList<ModelMain> = ArrayList()
     lateinit var searchView: SearchView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,35 +76,42 @@ class MainActivity : AppCompatActivity(), MainAdapter.onSelectData {
         private get() {
             progressDialog!!.show()
             AndroidNetworking.get(Api.Categories)
-                    .setPriority(Priority.HIGH)
-                    .build()
-                    .getAsJSONObject(object : JSONObjectRequestListener {
-                        override fun onResponse(response: JSONObject) {
-                            try {
-                                progressDialog!!.dismiss()
-                                val playerArray = response.getJSONArray("categories")
-                                for (i in 0 until playerArray.length()) {
-
-                                    val temp = playerArray.getJSONObject(i)
-                                    val dataApi = ModelMain()
-                                    dataApi.strCategory = temp.getString("strCategory")
-                                    dataApi.strCategoryThumb = temp.getString("strCategoryThumb")
-                                    dataApi.strCategoryDescription = temp.getString("strCategoryDescription")
-                                    modelMain.add(dataApi)
-                                    showCategories()
-                                }
-                            } catch (e: JSONException) {
-                                e.printStackTrace()
-                                Toast.makeText(this@MainActivity,
-                                        "Gagal menampilkan data!", Toast.LENGTH_SHORT).show()
-                            }
-                        }
-
-                        override fun onError(anError: ANError) {
+                .setPriority(Priority.HIGH)
+                .build()
+                .getAsJSONObject(object : JSONObjectRequestListener {
+                    override fun onResponse(response: JSONObject) {
+                        try {
                             progressDialog!!.dismiss()
-                            Toast.makeText(this@MainActivity, "No hay conexion a internet!", Toast.LENGTH_SHORT).show()
+                            val playerArray = response.getJSONArray("categories")
+                            for (i in 0 until playerArray.length()) {
+
+                                val temp = playerArray.getJSONObject(i)
+                                val dataApi = ModelMain()
+                                dataApi.strCategory = temp.getString("strCategory")
+                                dataApi.strCategoryThumb = temp.getString("strCategoryThumb")
+                                dataApi.strCategoryDescription =
+                                    temp.getString("strCategoryDescription")
+                                modelMain.add(dataApi)
+                                showCategories()
+                            }
+                        } catch (e: JSONException) {
+                            e.printStackTrace()
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Gagal menampilkan data!", Toast.LENGTH_SHORT
+                            ).show()
                         }
-                    })
+                    }
+
+                    override fun onError(anError: ANError) {
+                        progressDialog!!.dismiss()
+                        Toast.makeText(
+                            this@MainActivity,
+                            "No hay conexion a internet!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                })
         }
 
     private fun showCategories() {
@@ -114,13 +125,21 @@ class MainActivity : AppCompatActivity(), MainAdapter.onSelectData {
         startActivity(intent)
     }
 
+    // Aqui agregamos la funcion para que al momento de dar click en la imagen nos mande
+    // a nuestro repositorio
     private fun openGithub() {
         imgOpenGithub!!.setOnClickListener {
-            val uri = Uri.parse("https://github.com/Angelleyva-60876/GreatFoodapp-Proyecto-De-Desarrollo-De-Dispositivos-Moviles/tree/Carlos-Aguilar")
+            val uri =
+                Uri.parse("https://github.com/Angelleyva-60876/GreatFoodapp-Proyecto-De-Desarrollo-De-Dispositivos-Moviles/tree/Carlos-Aguilar")
             startActivity(Intent.createChooser(Intent(Intent.ACTION_VIEW, uri), "Open with"))
         }
     }
 
+    fun getItemCount(): Int {
+        return modelMain.size
+    }
+
+   //
     private fun searchView() {
         searchView = findViewById(R.id.search_recipe)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -128,10 +147,17 @@ class MainActivity : AppCompatActivity(), MainAdapter.onSelectData {
                 setSearchView(query)
                 return false
             }
+                /*if (modelMain.contains(query)) {
+                    mainAdapter.filter.filter(query)
+                } else {
+                    Toast.makeText(this@MainActivity, "No Match found", Toast.LENGTH_LONG).show()
+                }
+                return false
+            }*/
 
             override fun onQueryTextChange(newText: String): Boolean {
                 if (newText == "") {
-//                    getDefaultData()
+                    getItemCount()
                 }
                 return false
             }
@@ -139,12 +165,13 @@ class MainActivity : AppCompatActivity(), MainAdapter.onSelectData {
     }
 
     private fun setSearchView(query: String) {
-            Toast.makeText(this@MainActivity, "Feature under development", Toast.LENGTH_LONG).show()
-//        if (list.contains(query)) {
-//            adapter.filter.filter(query)
-//        } else {
-//            Toast.makeText(this@MainActivity, "No Match found", Toast.LENGTH_LONG).show()
-//        }
+            Toast.makeText(this@MainActivity, "Casi lista", Toast.LENGTH_LONG).show()
+        if (modelMain.contains(query)) {
+            //modelMain.add(dataApi)
+            mainAdapter.filter().filter(query);
+        } else {
+            Toast.makeText(this@MainActivity, "No se encuentra", Toast.LENGTH_LONG).show()
+        }
     }
 
     companion object {

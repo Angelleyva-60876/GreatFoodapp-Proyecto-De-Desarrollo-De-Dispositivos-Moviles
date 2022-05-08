@@ -88,6 +88,7 @@ class DetailRecipeActivity : AppCompatActivity() {
 
     private val detailRecipe: Unit
         private get() {
+            //Mostraremos el cuadro de que los datos estan cargando
             progressDialog!!.show()
             AndroidNetworking.get(Api.DetailRecipe)
                     .addPathParameter("idMeal", idMeal)
@@ -100,16 +101,19 @@ class DetailRecipeActivity : AppCompatActivity() {
                                 val playerArray = response.getJSONArray("meals")
                                 for (i in 0 until playerArray.length()) {
 
+                                    //Mostraremos la primera seccion que es las instrucciones
                                     val temp = playerArray.getJSONObject(i)
                                     val dataApi = ModelDetailRecipe()
                                     val Instructions = temp.getString("strInstructions")
                                     tvInstructions!!.text = Instructions
 
+                                    //La categoria ah que pertenece y el area para mostrarlo
                                     val Category = temp.getString("strCategory")
                                     val Area = temp.getString("strArea")
                                     tvSubTitle!!.text = "$Category | $Area"
 
-
+                                    //Aqui empieza la construcicon y funcionamiento del boton
+                                    //para youtube
                                     val Source = temp.getString("strSource")
                                     tvSource!!.setOnClickListener { v: View? ->
                                         val intentYoutube = Intent(Intent.ACTION_VIEW)
@@ -117,6 +121,7 @@ class DetailRecipeActivity : AppCompatActivity() {
                                         startActivity(intentYoutube)
                                     }
 
+                                    //Le mandamos los datos del link del video
                                     val Youtube = temp.getString("strYoutube")
                                     tvYoutube!!.setOnClickListener { v: View? ->
                                         val intentYoutube = Intent(Intent.ACTION_VIEW)
@@ -124,13 +129,14 @@ class DetailRecipeActivity : AppCompatActivity() {
                                         startActivity(intentYoutube)
                                     }
 
+                                    //Aqui el boton para vompartirlo
                                     val ShareRecipe = temp.getString("strSource")
                                     tvShareRecipe!!.setOnClickListener {
                                         val shareIntent = Intent()
                                         shareIntent.action = Intent.ACTION_SEND
                                         shareIntent.type="text/plain"
                                         shareIntent.putExtra(Intent.EXTRA_TEXT, ShareRecipe);
-                                        startActivity(Intent.createChooser(shareIntent, "Share with"))
+                                        startActivity(Intent.createChooser(shareIntent, "Compartir con"))
                                     }
 
                                     for (n in 1 .. 20){

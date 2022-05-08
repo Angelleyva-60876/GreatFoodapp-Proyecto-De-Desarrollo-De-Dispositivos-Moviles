@@ -29,6 +29,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private MainAdapter.onSelectData onSelectData;
     private Context mContext;
 
+
     public interface onSelectData {
         @NotNull
 
@@ -70,8 +71,44 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
+        return 0;
+    }
+
+    //@Override
+
+
+    /*public android.widget.Filter getFilter() {
+        // TODO Auto-generated method stub
+        return new android.widget.Filter() {
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                // TODO Auto-generated method stub
+                return null;
+            }
+        };
+    }
+
+    public int getCount() {
+        // TODO Auto-generated method stub
         return items.size();
     }
+
+    public Object getItem(int position) {
+        // TODO Auto-generated method stub
+        return position;
+    }
+
+    public long getItemId(int position) {
+        // TODO Auto-generated method stub
+        return position;
+    }*/
 
     //Class Holder
     class ViewHolder extends RecyclerView.ViewHolder {

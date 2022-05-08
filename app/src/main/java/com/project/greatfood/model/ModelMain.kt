@@ -16,4 +16,5 @@ class ModelMain : Serializable {
 
     var strCategoryDescription: String? = null
 
+
 }
