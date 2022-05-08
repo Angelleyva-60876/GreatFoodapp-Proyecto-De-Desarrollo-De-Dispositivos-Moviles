@@ -109,7 +109,7 @@ class DetailRecipeActivity : AppCompatActivity() {
                                     val Area = temp.getString("strArea")
                                     tvSubTitle!!.text = "$Category | $Area"
 
-                                    /*
+
                                     val Source = temp.getString("strSource")
                                     tvSource!!.setOnClickListener { v: View? ->
                                         val intentYoutube = Intent(Intent.ACTION_VIEW)
@@ -122,7 +122,7 @@ class DetailRecipeActivity : AppCompatActivity() {
                                         val intentYoutube = Intent(Intent.ACTION_VIEW)
                                         intentYoutube.data = Uri.parse(Youtube)
                                         startActivity(intentYoutube)
-                                    }*/
+                                    }
 
                                     val ShareRecipe = temp.getString("strSource")
                                     tvShareRecipe!!.setOnClickListener {

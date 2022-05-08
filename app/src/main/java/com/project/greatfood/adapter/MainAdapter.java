@@ -15,6 +15,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.project.greatfood.R;
 import com.project.greatfood.model.ModelMain;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 /**
@@ -28,6 +30,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     private Context mContext;
 
     public interface onSelectData {
+        @NotNull
+
+
         void onSelected(ModelMain modelMain);
     }
 

@@ -65,26 +65,24 @@
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
-
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#FFDA9C"
+                    app:cardBackgroundColor="#ffffe1e1"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="0dp"
                     app:cardUseCompatPadding="true">
 
                     <TextView
-                        android:id="@+id/tvShareRecipe"
+                        android:id="@+id/tvYoutube"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_share"
-                        android:drawablePadding="15dp"
+                        android:drawableStart="@drawable/ic_play"
+                        android:drawablePadding="10dp"
                         android:gravity="center_vertical"
                         android:padding="10dp"
-                        android:text="Compartir"
-                        android:textColor="#A66B08"
+                        android:text="Ver en Youtbe"
+                        android:textColor="#ffec2d2d"
                         android:textSize="12sp" />
 
                 </androidx.cardview.widget.CardView>
@@ -107,6 +105,28 @@
                         android:padding="10dp"
                         android:text="Ver en Web"
                         android:textColor="#ff2a7e2f"
+                        android:textSize="12sp" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#FFDA9C"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/tvShareRecipe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_share"
+                        android:drawablePadding="15dp"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:text="Compartir"
+                        android:textColor="#A66B08"
                         android:textSize="12sp" />
 
                 </androidx.cardview.widget.CardView>
